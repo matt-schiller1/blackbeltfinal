@@ -1,0 +1,12 @@
+<strong>Edit Restaurant</strong>
+
+<form #editForm='ngForm' (submit)="editThisRestaurant(editForm.value)">
+  <input type="hidden" name="_id" [ngModel]="rest._id">
+
+  <p>Restaurant Name:</p><input type="text" required minlength="3" name="name" [(ngModel)]="rest.name" #name="ngModel">
+  <div *ngIf="name.errors">
+    Name Must be at least 3 characters long
+  </div>
+  <p>Cuisine Type:</p><input type="text" required minlength="3" name="cuisine" [(ngModel)]="rest.cuisine"><br>
+  <input [disabled]="!name.valid" type="submit" value="edit">
+</form>

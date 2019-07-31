@@ -1,0 +1,16 @@
+<h1>Lets Eat</h1>
+
+<button class="btn-grad" [routerLink]="['/restaurants/review/', restaurantID ]">New Review</button>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Stars</th>
+    <th>Rating</th>
+  </tr>
+  <tr *ngFor="let rev of reviews">
+    <td>{{rev.name}}</td>
+    <td>{{rev.rating}}</td>
+    <td>{{rev.review}}</td>
+  </tr>
+</table>

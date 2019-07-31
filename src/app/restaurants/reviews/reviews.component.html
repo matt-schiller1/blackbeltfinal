@@ -1,0 +1,16 @@
+<h1>Let's Eat</h1>
+<p>Write a review!</p>
+<p *ngFor='let err of errors'> {{err}}</p>
+<form #rateform (submit)="addReview(restaurantID, rateform.value)">
+  <p>Your Name: <input type="text" name="name" [(ngModel)]="newReview.name"></p>
+  <p>Stars <select name="rating" [(ngModel)]="newReview.rating">
+      <option selected="selected" value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select></p>
+  <p>Your Review: <input type="text" name="review" [(ngModel)]="newReview.review"></p>
+  <input type="hidden" name="restID" value="restaurantID" [(ngModel)]="newReview.restID">
+  <input type="submit" value="Submit">
+</form>

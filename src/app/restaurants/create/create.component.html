@@ -1,0 +1,12 @@
+<h1>Let's Eat</h1>
+
+<h3>Register a restaurant</h3>
+
+<p *ngFor='let err of errors'> {{err}}</p>
+<form (submit)="addRestaurant()">
+  <p>Restaurant name:</p>
+  <input type="text" name="name" [(ngModel)]="newRestaurant.name">
+  <p>Cuisine:</p>
+  <input type="text" name="cuisine" [(ngModel)]="newRestaurant.cuisine"><br>
+  <button class="button" (click)="onCancel()">cancel</button> <input type="submit" value="Register">
+</form>

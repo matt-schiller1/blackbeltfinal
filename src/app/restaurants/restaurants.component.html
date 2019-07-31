@@ -1,0 +1,24 @@
+<h1>Lets Eat</h1>
+
+<button class="btn-grad" [routerLink]="['/restaurants/new']">New Restaurant</button>
+
+<div class="container">
+  <table>
+    <tr>
+      <th>Restaurant</th>
+      <th>Cuisine</th>
+      <th>Actions Available</th>
+    </tr>
+    <tr *ngFor="let rest of restaurants">
+      <td>{{rest.name}}</td>
+      <td>{{rest.cuisine}}</td>
+      <td>
+        <button class="btn-grad" [routerLink]="['/restaurants/', rest._id ]">Read
+          Reviews</button><button class="btn-grad" (click)="showRestaurantDetails(rest._id)">Update</button><button
+          class="btn-grad" (click)="onDelete(rest)">Delete</button></td>
+    </tr>
+
+  </table>
+
+</div>
+<app-edit *ngIf='rest' [rest]='rest' (myEvent)="invoked($event)"></app-edit>

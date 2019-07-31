@@ -1,0 +1,12 @@
+tr:nth-child(odd){
+  background-color: #eff0f1;
+}
+
+table {
+  border: 1px solid black;
+  width: 400px;
+
+}
+
+.btn-grad {background-image: linear-gradient(to right, #757F9A 0%, #D7DDE8 51%, #757F9A 100%)}
+.btn-grad:hover { background-position: right center; }
